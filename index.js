@@ -1,4 +1,3 @@
-var number = 7
-var a = ++number;
-console.log(a);
-console.log(number)
+var str = ' Welcome  '
+var c = str.trimStart()
+console.log(c.length)
