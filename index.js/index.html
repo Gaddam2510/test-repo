@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add some basic styling */
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+    <title>Matrix Generator</title>
+</head>
+<body>
+
+<!-- Create buttons and a container for displaying matrices -->
+<button onclick="Button1(2, 2)">2x2 Matrix</button>
+<button onclick="generateMatrix(3, 3)">3x3 Matrix</button>
+<button onclick="generateMatrix(4, 4)">4x4 Matrix</button>
+<div id="matrixContainer"></div>
+
+<script>
+    // Function to generate a matrix and display it
+    function generateMatrix(rows, cols) {
+        // Generate a random matrix (you can replace this with your own logic)
+        const matrix = generateRandomMatrix(rows, cols);
+
+        // Display the matrix in the container
+        displayMatrix(matrix);
+    }
+
+    // Function to generate a random matrix (replace this with your own logic)
+    function generateRandomMatrix(rows, cols) {
+        const matrix = [];
+        for (let i = 0; i < rows; i++) {
+            const row = [];
+            for (let j = 0; j < cols; j++) {
+                row.push(Math.floor(Math.random() * 10)); // Replace this with your own logic
+            }
+            matrix.push(row);
+        }
+        return matrix;
+    }
+
+    // Function to display the matrix in the container
+    function displayMatrix(matrix) {
+        const matrixContainer = document.getElementById("matrixContainer");
+        matrixContainer.innerHTML = ""; // Clear previous content
+
+        // Create a table to display the matrix
+        const table = document.createElement("table");
+
+        // Loop through rows and columns to create table cells
+        for (let i = 0; i < matrix.length; i++) {
+            const row = document.createElement("tr");
+            for (let j = 0; j < matrix[i].length; j++) {
+                const cell = document.createElement("td");
+                cell.textContent = matrix[i][j];
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+
+        matrixContainer.appendChild(table);
+    }
+</script>
+
+</body>
+</html>
+
