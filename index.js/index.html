@@ -9,13 +9,29 @@
             margin: 5px;
             padding: 10px;
         }
+        .colored-margin{
+            background-color: orange;
+            color:white;
+        }
+        .colored-margin{
+            background-color: red;
+            color:white;
+    
+        }
+        .colored-margin{
+            background-color: green;
+            color:white;
+        }
+        #matrixContainer {
+            margin-top: 10px;
+        }
     </style>
     <title>Matrix Generator</title>
 </head>
 <body>
 
 <!-- Create buttons and a container for displaying matrices -->
-<button onclick="Button1(2, 2)">2x2 Matrix</button>
+<button onclick="generateMatrix(2, 2)">2x2 Matrix</button>
 <button onclick="generateMatrix(3, 3)">3x3 Matrix</button>
 <button onclick="generateMatrix(4, 4)">4x4 Matrix</button>
 <div id="matrixContainer"></div>
